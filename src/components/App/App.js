@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import History from '../History/History';
@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 function App(props) {
 
-  useEffect(() => {props.dispatch({type: 'FETCH_COLORS'})}, []);
+  // useEffect(() => {props.dispatch({type: 'FETCH_COLORS'})}, []);
 
   return (
     <div className="App">
