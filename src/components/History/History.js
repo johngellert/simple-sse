@@ -6,9 +6,16 @@ function History(props) {
   let eventSource;
 
   useEffect(() => {
-    // Need to use code below when running code locally.
-    // eventSource = new EventSource("http://localhost:5000/color-events");
-    eventSource = new EventSource("color-events");
+
+    // NODE_ENV can be "production", "development", or "test"
+    if(process.env.NODE_ENV === "production") {
+        eventSource = new EventSource("color-events");
+    } else {
+        // Need to define the endpoint when running the client and server locally
+        // on the same machine.
+        eventSource = new EventSource("http://localhost:5000/color-events");
+    }
+    
     eventSource.addEventListener("colorUpdates", e => {
       setHistory({
         colorHistory: [...JSON.parse(e.data)]
