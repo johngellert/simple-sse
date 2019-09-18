@@ -4,7 +4,7 @@ import "eventsource-polyfill";
 
 function History(props) {
   const eventSource = new EventSource("http://localhost:5000/color-events");
-  eventSource.addEventListener("colorUpdates", e => {
+  eventSource.addEventListener("colorUpdates", (e) => {
     console.log(JSON.parse(e.data));
   });
   //   const [history, setHistory] = useState({
