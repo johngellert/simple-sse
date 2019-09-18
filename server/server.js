@@ -11,18 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let resultsColors = [];
-let messageId = 0;
-let colorSocket;
-
-const sendColors = (req, res) => {
-  res.write(`id:${messageId}\n`);
-    res.write("event:colorUpdates\n");
-    res.write(`data:${JSON.stringify(resultsColors)}\n`);
-    res.write("\n\n");
-    messageId += 1;
-}
-
-
 const getColors = () => {
   const query = `SELECT * FROM "colors" ORDER BY "id" DESC LIMIT 10;`;
   console.log("getting colors");
@@ -30,17 +18,16 @@ const getColors = () => {
     .query(query)
     .then(results => {
       resultsColors = [...results.rows];
-      colorSocket();
-      console.log(resultsColors);
     })
     .catch(error => {
       console.log(`Error with GET color query:`, error);
     });
 };
 
-
 app.get("/color-events", cors(), (req, res) => {
   // SSE Setup
+  getColors();
+  let messageId = 0;
   
   res.writeHead(200, {
     Connection: "keep-alive",
@@ -49,8 +36,14 @@ app.get("/color-events", cors(), (req, res) => {
   });
 
   res.write("\n");
-  colorSocket = () => sendColors(req, res);
-  getColors();
+
+  setInterval(() => {
+    res.write(`id:${messageId}\n`);
+    res.write("event:colorUpdates\n");
+    res.write(`data:${JSON.stringify(resultsColors)}\n`);
+    res.write("\n\n");
+    messageId += 1;
+  }, 1000);
 
 });
 

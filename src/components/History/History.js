@@ -11,7 +11,7 @@ function History(props) {
     if(process.env.NODE_ENV === "production") {
         eventSource = new EventSource("color-events");
     } else {
-        // Need to define the endpoint when running the client and server locally
+        // Need to define the endpoint on the server when running the client and server locally
         // on the same machine.
         eventSource = new EventSource("http://localhost:5000/color-events");
     }
@@ -42,7 +42,6 @@ function History(props) {
           <li key={item.id}>{item.color}</li>
         ))}
       </ul>
-      <pre>{JSON.stringify(process.env, null, 2)}</pre>
     </div>
     
   );
