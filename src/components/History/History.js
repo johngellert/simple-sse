@@ -6,8 +6,8 @@ function History(props) {
   let eventSource;
 
   useEffect(() => {
-    eventSource = new EventSource("http://localhost:5000/color-events");
-
+    // eventSource = new EventSource("http://localhost:5000/color-events");
+    eventSource = new EventSource("color-events");
     eventSource.addEventListener("colorUpdates", e => {
       setHistory({
         colorHistory: [...JSON.parse(e.data)]
