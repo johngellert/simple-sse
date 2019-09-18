@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import "eventsource-polyfill";
 
 function History(props) {
-  const eventSource = new EventSource("http://localhost:5000/color-events");
+  let eventSource;
 
-  //   eventSource.addEventListener("colorUpdates", (e) => {
-  //     console.log(JSON.parse(e.data));
-  //   });
+  useEffect(() => {
+    eventSource = new EventSource("http://localhost:5000/color-events");
+
+    eventSource.addEventListener("colorUpdates", e => {
+      setHistory({
+        colorHistory: [...JSON.parse(e.data)]
+      });
+    });
+  }, []);
 
   const [history, setHistory] = useState({
     colorHistory: []
-  });
-
-  eventSource.addEventListener("colorUpdates", (e) => {
-    setHistory({
-      colorHistory: [...JSON.parse(e.data)]
-    });
   });
 
   //   eventSource.addEventListener("colorUpdates", e => {

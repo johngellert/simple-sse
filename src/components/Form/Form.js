@@ -2,21 +2,6 @@ import React, { useState } from "react";
 import { connect } from "react-redux";   
 
 function Form(props) {
-  // const eventSource = new EventSource("http://localhost:5000/color-events");
-
-  // // useEffect(eventSource.onmessage = (e) => {console.log("blue")}, []);
-  // // eventSource.addEventListener("colorUpdates", e => {console.log(e.data)});
-
-  // useEffect(() => {
-  //   eventSource.addEventListener("colorUpdates", e => {
-  //     // console.log(e.data);
-  //     updateColors(e.data);
-  //   });
-  // }, []);
-
-  // const updateColors = arrayOfColors => {
-  //   // console.log(arrayOfColors);
-  // };
 
   const [input, setInput] = useState({
     color: ""
