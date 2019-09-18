@@ -6,6 +6,7 @@ function History(props) {
   let eventSource;
 
   useEffect(() => {
+    // Need to use code below when running code locally.
     // eventSource = new EventSource("http://localhost:5000/color-events");
     eventSource = new EventSource("color-events");
     eventSource.addEventListener("colorUpdates", e => {
@@ -34,7 +35,9 @@ function History(props) {
           <li key={item.id}>{item.color}</li>
         ))}
       </ul>
+      <pre>{JSON.stringify(process.env, null, 2)}</pre>
     </div>
+    
   );
 }
 
