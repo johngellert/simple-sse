@@ -1,10 +1,12 @@
-const colorsReducer = (state = [], action) => {
-    switch (action.type) {
-      case 'SET_COLORS':
-        return action.payload;
-      default:
-        return state;
-    }
-  };
-  
-  export default colorsReducer;
+const currentColor = (state = '', action) => {
+  console.log(action);
+  switch (action.type) {
+    case "SET_COLOR":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default currentColor;
+

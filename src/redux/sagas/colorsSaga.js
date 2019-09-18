@@ -11,20 +11,9 @@ function* postColor(action) {
   }
 }
 
-function* fetchColors(action) {
-  try {
-    const colorsResponse = yield axios.get('/api/colors');
-    yield put({type: 'SET_COLORS', payload: colorsResponse.data})
-  } catch (error) {
-    console.log('Error fetching colors,', error);
-  }
-}
-
-
 
 function* colorsSaga() {
   yield takeLatest('POST_COLOR', postColor);
-  yield takeLatest('FETCH_COLORS', fetchColors);
 }
 
 export default colorsSaga;
