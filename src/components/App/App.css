@@ -1,23 +1,125 @@
 .Red {
-    background-color: lightcoral;
-} 
+  text-align: center;
+  background: #ed213a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
 
 .Yellow {
-    background-color: lightyellow;
+  text-align: center;
+  background: #cac531; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f3f9a7,
+    #cac531
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f3f9a7,
+    #cac531
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .Blue {
-    background-color: lightblue;
+  text-align: center;
+  background: #00b4db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0083b0,
+    #00b4db
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0083b0,
+    #00b4db
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .Orange {
-    background-color: rgb(253, 201, 103);
+  text-align: center;
+  background: #c21500; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc500,
+    #c21500
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc500,
+    #c21500
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .Purple {
-    background-color: rgb(255, 182, 251);
+  text-align: center;
+  background: #ff0099; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #493240,
+    #ff0099
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #493240,
+    #ff0099
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .Green {
-    background-color: lightgreen;
+  text-align: center;
+  background: #dce35b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #45b649,
+    #dce35b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #45b649,
+    #dce35b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
