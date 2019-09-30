@@ -45,7 +45,7 @@ function History(props) {
 
   return (
     <div className="history-container">
-      <h2>Recently Added</h2>
+      <h2>Recent Colors</h2>
       {/* <ul> */}
         {/* {props.state.colors.map(item => (
           <li key={item.id}>{item.color}</li>
