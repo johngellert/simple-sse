@@ -36,7 +36,7 @@ function Form(props) {
           <option value="Purple">Purple</option>
           <option value="Orange">Orange</option>
         </select>
-        <button onClick={handleSubmitClick}>Submit</button>
+        <button onClick={handleSubmitClick}>Change</button>
     </div>
   );
 }
