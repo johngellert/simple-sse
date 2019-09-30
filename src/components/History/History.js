@@ -46,14 +46,14 @@ function History(props) {
   return (
     <div className="history-container">
       <h2>Recently Added</h2>
-      <ul>
+      {/* <ul> */}
         {/* {props.state.colors.map(item => (
           <li key={item.id}>{item.color}</li>
         ))} */}
         {history.colorHistory.map(item => (
-          <li key={item.id}>{item.color}</li>
+          <p key={item.id}>{item.color}</p>
         ))}
-      </ul>
+      {/* </ul> */}
     </div>
   );
 }
