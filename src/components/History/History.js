@@ -10,6 +10,7 @@ function History(props) {
     currentColor: ""
   });
 
+  // create an event listener when the component loads
   useEffect(() => {
     // NODE_ENV can be "production", "development", or "test"
     if (process.env.NODE_ENV === "production") {
@@ -28,6 +29,7 @@ function History(props) {
     });
   }, []);
 
+  // set current color to the item at index 0 when colorHistory changes
   useEffect(() => {
     setHistory({
       ...history,
@@ -35,25 +37,19 @@ function History(props) {
     });
   }, [history.colorHistory]);
 
+  // set color when currentColor changes
   useEffect(() => {
     props.dispatch({ type: "SET_COLOR", payload: history.currentColor || "" });
   }, [history.currentColor]);
 
-  //   eventSource.addEventListener("colorUpdates", e => {
-  //       props.dispatch({ type: "SET_COLORS", payload: JSON.parse(e.data) });
-  //     });
-
   return (
     <div className="history-container">
       <h2>Recent Colors</h2>
-      {/* <ul> */}
-        {/* {props.state.colors.map(item => (
-          <li key={item.id}>{item.color}</li>
-        ))} */}
+        {/* Display last 10 colors */}
         {history.colorHistory.map(item => (
           <p key={item.id}>{item.color}</p>
         ))}
-      {/* </ul> */}
+ 
     </div>
   );
 }
