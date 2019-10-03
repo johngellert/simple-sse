@@ -7,6 +7,7 @@ function Form(props) {
     counter: 0
   });
 
+  
   const handleSelectChange = inputEvent => {
     setInput({
       ...input,
@@ -14,6 +15,7 @@ function Form(props) {
     });
   };
 
+  // If the color selected is not equal to "Select" update the state with the selected color
   const handleSubmitClick = () => {
     if (input.color !== "Select") {
       setInput({
@@ -26,7 +28,9 @@ function Form(props) {
 
   return (
     <div className="form-container">
+
       <p>Select a color</p>
+      {/* User selects a value from the list */}
         <select type="text" name="colorSelect" onChange={handleSelectChange}>
           <option value="Select">Select</option>
           <option value="Red">Red</option>
@@ -36,6 +40,7 @@ function Form(props) {
           <option value="Purple">Purple</option>
           <option value="Orange">Orange</option>
         </select>
+        {/* Button run the handle click function updating the state with the selected color */}
         <button onClick={handleSubmitClick}>Change</button>
     </div>
   );
