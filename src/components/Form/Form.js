@@ -29,7 +29,8 @@ function Form(props) {
   return (
     <div className="form-container">
 
-      <p>Select a color</p>
+      <p>Open this application in a new browser or on a different device, then select a color</p>
+      <p>The server will push events to all active sessions, so the color will update on the application open on the other browser or device</p>
       {/* User selects a value from the list */}
         <select type="text" name="colorSelect" onChange={handleSelectChange}>
           <option value="Select">Select</option>
